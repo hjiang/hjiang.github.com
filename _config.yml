@@ -2,12 +2,12 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://yoursite.com
-title: My Octopress Blog
-subtitle: A blogging framework for hackers.
-author: Your Name
+url: http://hjiang.github.com
+title: A Humble Programmer
+subtitle: Another place, another time.
+author: Hong Jiang
 simple_search: http://google.com/search
-description:
+description: The personal website of Hong Jiang
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
@@ -27,7 +27,7 @@ email:
 
 # If publishing to a subdirectory as in http://site.com/project set 'root: /project'
 root: /
-permalink: /blog/:year/:month/:day/:title/
+permalink: pretty
 source: source
 destination: public
 plugins: plugins
