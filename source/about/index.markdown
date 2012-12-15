@@ -11,9 +11,7 @@ footer: true
 
 Hi, I am 江宏 (Jiang, Hong). This is my personal website.
 
-I had co-founded two companies in the past. Now I am leading the China branch
-of [AVOS](http://www.avos.com) to create [美味书签](http://mei.fm) which is a
-[Delicious](http://delicious.com) product for the Chinese market.
+I am leading the [China branch](http://team.mei.fm) of [AVOS](http://www.avos.com). Our products include [美味书签](http://meiweisq.com), [美味爱读](http://readwise.net), and [美味集](http://meiwei.fm).
 
 From mid-2007 to mid-2010, I had been a software engineer at Google
 (Mountain View) and worked on search infrastructure.
