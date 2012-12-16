@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Elegant MongoDB MapReduce with Clojure
 categories:
 tags:

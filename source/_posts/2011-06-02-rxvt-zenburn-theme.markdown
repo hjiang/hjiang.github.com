@@ -1,4 +1,5 @@
 ---
+layout: post
 status: publish
 title: Rxvt zenburn theme
 comments: true
