@@ -4,7 +4,7 @@
   <title><![CDATA[A Humble Programmer]]></title>
   <link href="http://hjiang.github.com/atom.xml" rel="self"/>
   <link href="http://hjiang.github.com/"/>
-  <updated>2012-12-17T02:52:04+08:00</updated>
+  <updated>2012-12-27T20:28:39+08:00</updated>
   <id>http://hjiang.github.com/</id>
   <author>
     <name><![CDATA[Hong Jiang]]></name>
@@ -18,7 +18,7 @@
     <link href="http://hjiang.github.com/2012/12/17/common-cv-errors/"/>
     <updated>2012-12-17T01:08:00+08:00</updated>
     <id>http://hjiang.github.com/2012/12/17/common-cv-errors</id>
-    <content type="html"><![CDATA[<p>从工作之后、到后来创业、再到现在主管 AVOS 的北京 Office，我看了不计其数的简历，也参与了很多面试。看到很多求职者都犯了很多相似的错误，于是总结出来，希望能对一些求职的人有一些正面的作用。</p>
+    <content type="html"><![CDATA[<p>从工作之后、到后来创业、再到现在主管 AVOS 的北京 Office，我看了不计其数的简历，也参与了不少面试。看到很多求职者都犯了很多相似的错误，于是总结出来，希望能对一些求职的人有一些正面的作用。</p>
 
 <!--more-->
 
@@ -29,7 +29,7 @@
 
 <p>我看到的最难以接受的错误是把自己日常工作的东西都写错，例如一个有两年 iOS 开发经验的人在简历的所有地方都把 Objective-C 写成了 Object C。一个连自己使用的语言都搞不清的人，怎么能说掌握了这门语言。</p>
 
-<p>对求职信，也有很多值得注意的地方。有一些求职信是空白的，就只有一个附件，连申请什么职位也没写，给人的感觉就是此人懒到了极点，连求职都这样，可见其他事情也会很马虎。还有些求职信的信头 <code>From:</code> 里用的不是真名。我最近见到过的有诸如『aha61』、『94smart』、『一塊很帥的姜』、『不想长大』（不想长大？你确定想工作吗？）之类的，显得很不专业。当然，如果是阿里系的朋友，使用花名是可以理解的。</p>
+<p>对求职信，也有很多值得注意的地方。有一些求职信是空白的，就只有一个附件，连申请什么职位也没写，给人的感觉就是此人懒到了极点，连求职都这样，可见其他事情也会很马虎。还有些求职信的信头 <code>From:</code> 里用的不是真名。我最近见到过的有诸如『aha61』、『94smart』、『不想长大』（不想长大？你确定想工作吗？）之类的，显得很不专业。当然，如果是阿里系的朋友，使用花名是可以理解的。</p>
 
 <h3>『精通』</h3>
 
