@@ -14,9 +14,15 @@
 //$footer-bg-front: image-url('noise.png');
 //$footer-bg-back: linear-gradient(lighten($footer-bg, 8), $footer-bg, darken($footer-bg, 11));
 
+$page-bg: #e0e0e0;
+
+$nav-bg: #c5c5c5;
+$nav-bg-back: $nav-bg;
+$nav-border-top: none;
+$nav-border-bottom: darken($nav-bg, 25) !default;
 
 /* To use the light Solarized highlighting theme uncomment the following line */
-//$solarized: light;
+$solarized: light;
 
 /* If you want to tweak the Solarized colors you can do that here */
 //$base03:          #002b36; //darkest blue
@@ -38,6 +44,6 @@
 
 
 /* Non highlighted code colors */
-//$pre-bg: $base03;
+$pre-bg: #f2f2f2;
 //$pre-border: darken($base02, 5);
 //$pre-color: $base1;
