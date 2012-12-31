@@ -1,24 +1,109 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[A Humble Programmer]]></title>
-  <link href="http://hjiang.github.com/atom.xml" rel="self"/>
-  <link href="http://hjiang.github.com/"/>
-  <updated>2012-12-31T15:43:53+08:00</updated>
-  <id>http://hjiang.github.com/</id>
-  <author>
-    <name><![CDATA[Hong Jiang]]></name>
-    
-  </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Clojure: 现实世界的 LISP - A Humble Programmer</title>
+  <meta name="author" content="Hong Jiang">
 
   
-  <entry>
-    <title type="html"><![CDATA[Clojure: 现实世界的 LISP]]></title>
-    <link href="http://hjiang.github.com/2012/12/31/clojure-intro/"/>
-    <updated>2012-12-31T15:15:00+08:00</updated>
-    <id>http://hjiang.github.com/2012/12/31/clojure-intro</id>
-    <content type="html"><![CDATA[<blockquote><p>这篇文章原文叫「现实世界的 LISP - Clojure 语言初探」，发表于《程序员》杂志2012年的十二月刊。得到编辑的许可在一个月后贴出来。有网友说这篇文章写得太平淡规矩，没有那种让大家都去学 Clojure 的煽动性，不过那其实也不是我的目的。只希望对想初步了解这门语言的人有一些帮助。</p></blockquote>
+  <meta name="description" content="这篇文章原文叫「现实世界的 LISP - Clojure 语言初探」，发表于《程序员》杂志2012年的十二月刊。得到编辑的许可在一个月后贴出来。有网友说这篇文章写得太平淡规矩，没有那种让大家都去学 Clojure 的煽动性，不过那其实也不是我的目的。只希望对想初步了解这门语言的人有一些帮助。 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://hjiang.github.com/2012/12/31/clojure-intro/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="A Humble Programmer" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-37097658-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">A Humble Programmer</a></h1>
+  
+    <h2>Another place, another time.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:hjiang.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about/">About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Clojure: 现实世界的 LISP</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-31T15:15:00+08:00" pubdate data-updated="true">Dec 31<span>st</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><blockquote><p>这篇文章原文叫「现实世界的 LISP - Clojure 语言初探」，发表于《程序员》杂志2012年的十二月刊。得到编辑的许可在一个月后贴出来。有网友说这篇文章写得太平淡规矩，没有那种让大家都去学 Clojure 的煽动性，不过那其实也不是我的目的。只希望对想初步了解这门语言的人有一些帮助。</p></blockquote>
 
 <!--more-->
 
@@ -302,88 +387,159 @@ user=&gt;
 <p>有人说 Clojure 是为并行而设计的，并认为多线程编程会因为使用 Clojure 而变得非常简单。然而这门语言最吸引我的还是LISP语言的简洁、强大和可扩展性，以及Clojure对函数式程序设计的鼓励。一门程序设计语言可以通过提供更高层及更丰富的抽象来帮助用户更方便地描述问题和过程。然而这些抽象是基于人本身对问题和过程的理解的，不能超越人的认知。例如 Clojure 提供了 STM （software transactional memory，软件事务内存）来管理多个线程对共享资源的访问，与其他语言中常见的基于锁的方案比有很多优点。但如果一个程序员没有对 STM 的机制有深入的了解就在 Clojure 程序中随意使用 STM，是很容易造成问题的。比如有副作用的代码被多次重复执行，或者程序陷入『活锁』等等。STM 会带来便利，但没有降低对使用者在对问题的理解方面的要求。</p>
 
 <p>Fred Brooks 有一篇著名的论文叫『No Silver Bullet - Essence and Accidents of Software Engineering』。大意说没有任何单个技术进步会使得软件开发的效率大幅度提高。真正困难的问题并不是由于语言造成的，所以也不会因为某个语言提供了新的抽象而简单很多。语言是一个工具，用户应该对它有合理的期望。好的工程师可以用任何语言实现高质量的软件，而一个不好的工程师也不会因为使用一门特定的语言而在产出上有很大提高。Clojure 不是 Silver Bullet，但它能在一定范围内提高程序设计的效率。你仍然需要自己分析和寻找问题的答案，但它可以让你在实现解决方案的时候更高效。学习和熟悉 Clojure 采用的各项技术及倡导的编程风格，可以使用户成为更好的软件工程师，同样的技术和方法也可以应用到其他语言的实践中去。</p>
-]]></content>
-  </entry>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
   
-  <entry>
-    <title type="html"><![CDATA[求职时的常见错误]]></title>
-    <link href="http://hjiang.github.com/2012/12/17/common-cv-errors/"/>
-    <updated>2012-12-17T01:08:00+08:00</updated>
-    <id>http://hjiang.github.com/2012/12/17/common-cv-errors</id>
-    <content type="html"><![CDATA[<p>从工作之后、到后来创业、再到现在主管 AVOS 的北京 Office，我看了不计其数的简历，也参与了不少面试。看到很多求职者都犯了很多相似的错误，于是总结出来，希望能对一些求职的人有一些正面的作用。</p>
 
-<!--more-->
+<span class="byline author vcard">Posted by <span class="fn">Hong Jiang</span></span>
+
+      
 
 
-<h3>细节</h3>
 
-<p>不少简历里都有一些细节上的错误，比如错别字等。求职对于一个人来说是很重要的事，应该谨慎对待。而简历是敲门砖，虽然简单，但应该尽量做到无可挑剔。试问如果一个人对一件简单而对自己很重要的事情都马马虎虎，在工作上怎么让人放心呢？</p>
 
-<p>我看到的最难以接受的错误是把自己日常工作的东西都写错，例如一个有两年 iOS 开发经验的人在简历的所有地方都把 Objective-C 写成了 Object C。一个连自己使用的语言都搞不清的人，怎么能说掌握了这门语言。</p>
 
-<p>对求职信，也有很多值得注意的地方。有一些求职信是空白的，就只有一个附件，连申请什么职位也没写，给人的感觉就是此人懒到了极点，连求职都这样，可见其他事情也会很马虎。还有些求职信的信头 <code>From:</code> 里用的不是真名。我最近见到过的有诸如『aha61』、『94smart』、『不想长大』（不想长大？你确定想工作吗？）之类的，显得很不专业。当然，如果是阿里系的朋友，使用花名是可以理解的。</p>
 
-<h3>『精通』</h3>
 
-<p>请慎用『精通』二字。如果你在简历里说精通某个东西，那么最好有很大把握比面试官更熟悉这方面。我面试过的人里几乎所有精通 C++ 的人最终都被证实只是略懂 C++。在 Google 时还听说一个学生因为会写 Elisp 来定制 Emacs，于是简历里写精通 LISP。然后 HR 就安排了一个 LISP 的高手面试他，然后就没有然后了。</p>
 
-<p>如果一份简历里有说到『精通XXX』，即使不在职位的需求之内，我在面试中也一定会问问那方面的问题，因为这样很容易考察一个人的学习能力和自我认知。</p>
-
-<p>慎用、慎用。</p>
-
-<h3>面试</h3>
-
-<p>在面试中能不能正确回答出某个难题并不是特别重要，最重要的是展示出自己面对难题时的思路以及积极的态度。面试里通常会出现一些比较难而且多半不会在实际工作中出现的问题。面试官期待的是看到面试者能积极甚至是很兴奋的尝试以不同的思路分析和解决问题，比如把问题的规模变小、先考虑简单的特殊情况、或者从几个实例中去发现规律等。面试官也希望看到在给出一些提示后，面试者能被引导到正确的思路上。</p>
-
-<p>所以遇到不能很快解决的难题可以大胆地说出想法，在一段时间没有进展之后可以向面试官要求提示，但是不要简单地说『我不知道』。没有任何公司会喜欢在困难面前轻易放弃的员工。</p>
-]]></content>
-  </entry>
   
-  <entry>
-    <title type="html"><![CDATA[Elegant MongoDB MapReduce with Clojure]]></title>
-    <link href="http://hjiang.github.com/2011/07/12/elegant-mongodb-mapreduce-with-clojure/"/>
-    <updated>2011-07-12T00:00:00+08:00</updated>
-    <id>http://hjiang.github.com/2011/07/12/elegant-mongodb-mapreduce-with-clojure</id>
-    <content type="html"><![CDATA[<p>I wrote a post about <a href="http://onycloud.com/2011/07/13/mapreduce-with-mongodb-and-clojure.html" title="MapReduce with MongoDB and Clojure">MapReduce with MongoDB and
-Clojure</a>
-on the <a href="http://onycloud.com">OnyCloud Blog</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Rxvt zenburn theme]]></title>
-    <link href="http://hjiang.github.com/2011/06/02/rxvt-zenburn-theme/"/>
-    <updated>2011-06-02T00:00:00+08:00</updated>
-    <id>http://hjiang.github.com/2011/06/02/rxvt-zenburn-theme</id>
-    <content type="html"><![CDATA[<p>On Debian or Ubuntu derived systems, install rxvt with unicode and
-256-color support. sudo apt-get install rxvt-unicode-256color Put the
-following in <code>$HOME/.Xdefaults</code></p>
 
-<pre><code>URxvt*termName: rxvt-256color
-URxvt*xftAntialias: true
-URxvt*background: #3f3f3f
-URxvt*foreground: #dcdccc
-URxvt*cursorColor: #aaaaaa
-URxvt*colorUL: #366060
-URxvt*underlineColor: #dfaf8f
-URxvt*color0: #3f3f3f
-URxvt*color1: #cc9393
-URxvt*color2: #7f9f7f
-URxvt*color3: #d0bf8f
-URxvt*color4: #6ca0a3
-URxvt*color5: #dc8cc3
-URxvt*color6: #93e0e3
-URxvt*color7: #dcdccc
-URxvt*color8: #000000
-URxvt*color9: #dca3a3
-URxvt*color10: #bfebbf
-URxvt*color11: #f0dfaf
-URxvt*color12: #8cd0d3
-URxvt*color13: #dc8cc3
-URxvt*color14: #93e0e3
-URxvt*color15: #ffffff
-</code></pre>
-]]></content>
-  </entry>
+
+<time datetime="2012-12-31T15:15:00+08:00" pubdate data-updated="true">Dec 31<span>st</span>, 2012</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
   
-</feed>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://hjiang.github.com/2012/12/31/clojure-intro/" data-via="jiangh" data-counturl="http://hjiang.github.com/2012/12/31/clojure-intro/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/2012/12/17/common-cv-errors/" title="Previous Post: 求职时的常见错误">&laquo; 求职时的常见错误</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2012/12/31/clojure-intro/">Clojure: 现实世界的 LISP</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2012/12/17/common-cv-errors/">求职时的常见错误</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/07/12/elegant-mongodb-mapreduce-with-clojure/">Elegant MongoDB MapReduce with Clojure</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/06/02/rxvt-zenburn-theme/">Rxvt zenburn theme</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("jiangh", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/jiangh" class="twitter-follow-button" data-show-count="false">Follow @jiangh</a>
+  
+</section>
+
+
+
+
+<section>
+  <h1>新浪微博</h1>
+<iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=1&ptype=1&speed=0&skin=2&isTitle=0&noborder=0&isWeibo=1&isFans=0&uid=2328863693&verifier=bf02a52d&colors=f2f2f2,f2f2f2,4b4b4b,0082cb,f8f8f8&dpc=1"></iframe>
+</section>
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Hong Jiang -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'hjiang';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://hjiang.github.com/2012/12/31/clojure-intro/';
+        var disqus_url = 'http://hjiang.github.com/2012/12/31/clojure-intro/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
