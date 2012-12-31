@@ -2,5 +2,11 @@
 // Add styles here to make changes without digging in too much
 
 html {
-    background-image: none
+    background-image: none;
+}
+
+article {
+    p {
+        line-height: 1.8em;
+    }
 }
