@@ -4,7 +4,7 @@
   <title><![CDATA[A Humble Programmer]]></title>
   <link href="http://hjiang.github.com/atom.xml" rel="self"/>
   <link href="http://hjiang.github.com/"/>
-  <updated>2013-02-15T01:11:51+08:00</updated>
+  <updated>2013-02-23T00:18:46+08:00</updated>
   <id>http://hjiang.github.com/</id>
   <author>
     <name><![CDATA[Hong Jiang]]></name>
@@ -14,24 +14,47 @@
 
   
   <entry>
+    <title type="html"><![CDATA[发送文件到手机或给别人：最简单的方法]]></title>
+    <link href="http://hjiang.github.com/2013/02/22/filedrop-release/"/>
+    <updated>2013-02-22T23:45:00+08:00</updated>
+    <id>http://hjiang.github.com/2013/02/22/filedrop-release</id>
+    <content type="html"><![CDATA[<p>春节收假前做了个小产品 <a href="http://filedrop.in">FileDrop</a>，目标是提供一个最简单的发文件到手机和发文件给别人的方法。它的用法非常简单，打开 http://filedrop.in，把要发送的文件拖到页面上。只要从手机上用任何可以扫描二维码的应用（比如微信）扫描页面上显示的二维码就可以把文件下载到手机上。同时页面也会显示一个可以发给别人的链接。</p>
+
+<p>与现有的解决方案比，这个产品有以下特色：</p>
+
+<ul>
+<li>不用注册；</li>
+<li>不用连线；</li>
+<li>不用安装专门的应用；</li>
+<li>非常容易使用；</li>
+<li>文件会在24小时后自动删除，避免隐私问题和法律问题。</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[语言之争]]></title>
     <link href="http://hjiang.github.com/2013/02/14/artist-and-zealot/"/>
     <updated>2013-02-14T15:34:00+08:00</updated>
     <id>http://hjiang.github.com/2013/02/14/artist-and-zealot</id>
     <content type="html"><![CDATA[<p>最近在 Clojure 的邮件列表有很多关于自己所在公司不能使用自己喜欢的语言的抱怨，由此也引发了一些争论。类似的内容在很多相对非主流的语言或技术的用户社区都不难找到，例如 Erlang，Go 和 Haskell，不久以前可能 Node 甚至 Ruby 和 Python 都算是小众的。</p>
+
 <!--more-->
-<p>有人把软件设计看做一门手艺，把程序员比作工匠，所以才会有 Software Craftsmanship 这样的运动。工匠非常重视自己使用的工具，有了顺手和习惯的工具才能事半功倍，这本是无可厚非的。但作为一个公司来说，为了避免技术上过度的碎片化和重用现有资源，无法避免会在这方面做出或多或少的限制。比如几年以前 Google 在线上面对用户的产品只能使用 C++ 和 Java（YouTube 等收购的产品除外），Python 基本只用于内部工具。现在 Google 发布了 Go，可能选择多了一些。在这种情况下，喜欢使用一些小众技术或语言的程序员和公司之间的矛盾就产生了。<sup id='fnref:1'><a href='#fn:1' rel='footnote'>1</a></sup></p>
+
+
+<p>有人把软件设计看做一门手艺，把程序员比作工匠，所以才会有 Software Craftsmanship 这样的运动。工匠非常重视自己使用的工具，有了顺手和习惯的工具才能事半功倍，这本是无可厚非的。但作为一个公司来说，为了避免技术上过度的碎片化和重用现有资源，无法避免会在这方面做出或多或少的限制。比如几年以前 Google 在线上面对用户的产品只能使用 C++ 和 Java（YouTube 等收购的产品除外），Python 基本只用于内部工具。现在 Google 发布了 Go，可能选择多了一些。在这种情况下，喜欢使用一些小众技术或语言的程序员和公司之间的矛盾就产生了。<a href="http://steve-yegge.blogspot.kr/2007/06/rhino-on-rails.html">Rhino on Rails</a> 就是这样产生的。</p>
 
 <p>程序设计也是一门艺术。艺术的魅力一方面在于创作中可以有众多的选择，有众多的风格和流派，无所谓对错；另一方面也在于艺术家往往乐于接受挑战，在客观条件的限制下完成看似不可能的事情。比如在米粒这样非常不适合雕刻的介质上也能做出精美的微雕作品。学习 Clojure 的价值并不在于在工作中一定要用到这门语言，而是通过理解它解决问题的方法让自己成为更好的程序员，无论实际使用的是什么语言。如果喜欢函数式编程，那么在任何语言中都可以用它，不一定要强求使用一门函数式语言。事实上「函数式」或者「面向对象」都是人为的标签，很多时候一门语言的归类和属性还是存在争议的。</p>
 
 <p>拿 C++ 做例子，大多数人会说它是面向对象的语言，但它的模版部分是一个真正的纯函数式语言。我曾发起和负责一个项目把 Google search 的 webserver 逻辑重写，用 C++ 的模版和静态类型系统来实现对后端 RPC 复杂数据依赖的管理，让没有相互依赖的 RPC 并行进行，而存在依赖的 RPC 以正确的顺序进行，并确保当程序存在错误的数据依赖时在编译的时候就报错。现在还记得上线时的忐忑。这件事参考了 Haskell 用强大和完备的类型系统来加强程序正确性的做法，虽然在 Haskell 里会容易和自然很多，但肯定不可能为了这个优点把很大的 code base 用 Haskell 重写。 同一时期我的另一位同事实现了一个非常高效的 C++ continuation library，和 Scheme 的 <code>call/CC</code> 一样好用，只是不知道后来有没有用在生产环境里。</p>
 
 <p>学一门语言重要的是理解设计者解决问题的方法，这样也许客观条件限制你不能用它的语法，但仍可以用类似的方法解决类似的问题。有句话说「当你只有一个锤子的时候，你看什么都觉得像钉子」。其实了解越多的语言、技术和工具，会越觉得没有必要执着于某一个选择，因为任何选择都不是完美的，都存在 trade off。可以选择的时候就选择最适合的工具，没有选择的时候也能恰当利用可用的工具用合适的方法解决问题。大家要做 artist，不要做 zealot。</p>
+
 <hr />
+
 <p>说了那么多，还是做个小广告吧。如果你想在一家鼓励尝试新技术的公司工作，可以考虑加入我们，只要联系我就行。我们在这方面并不是完全没有限制，但可以保证存在的限制是合理的，同时也要求工程师对技术的态度是理性的。</p>
-<div class='footnotes'><hr /><ol><li id='fn:1'>
-<p><a href='http://steve-yegge.blogspot.kr/2007/06/rhino-on-rails.html'>Rhino on Rails</a> 就是这样产生的。</p>
-<a href='#fnref:1' rev='footnote'>&#8617;</a></li></ol></div>]]></content>
+]]></content>
   </entry>
   
   <entry>
@@ -40,7 +63,10 @@
     <updated>2013-01-11T19:43:00+08:00</updated>
     <id>http://hjiang.github.com/2013/01/11/tranditional-media-and-the-internet</id>
     <content type="html"><![CDATA[<p>去年 12 月 Newsweek 出版了最后一期纸质杂志，之后全部改为电子版。这件事引起了不小的震动。不久前我受邀参与了中国数字期刊协会组织的一次与媒体界朋友的交流。其实最近几年一直有很多关于传统报社、杂志社会被互联网杀死的论点，并且得到了比较广泛的支持。这个论点一般被表述为新媒体或者社交媒体会取代传统媒体。这里说一下我个人的看法。</p>
+
 <!--more-->
+
+
 <p>很多人因为报纸、杂志存在的时间比较久而把他们叫做传统媒体。参考 Wikipedia 上的定义，新媒体是指在任何时候任何地方在任何电子设备上对内容的即时访问，并包括交互的用户反馈、参与以及围绕媒体内容的社区构建。而旧媒体或传统媒体自然是指在互联网和新媒体出现前的通讯与表达方式。由此可以看出，所谓旧媒体和新媒体的差别主要是传播渠道和访问方式的区别。而对于报纸和杂志来说，最宝贵的财富和最核心的竞争力是内容。</p>
 
 <p>说新媒体会取代传统媒体本身没错，但这只是渠道的更替，并不意味着原有的内容生产者会被取代。好的报纸和杂志如果拥抱新的渠道、满足互联网用户在访问方式上的需求，在互联网逐渐成为主要的内容渠道后，仍然会具备很强的生命力和竞争力。因为他们具有很多难以被取代的优势：专业的制度和流程、媒体责任感、读者的信任感、能持续稳定地输出高质量内容。包括各类SNS在内的互联网产品优势主要在渠道上，这些渠道仍然需要高质量的内容才有价值。</p>
@@ -49,7 +75,8 @@
 
 <p>很多人会说除了正常的竞争外，互联网上出现的对版权的侵犯也会威胁内容的产出者。世界各国，包括中国在内，都在不断加强对版权的保护，社会对版权侵犯的容忍度越来越低，侵权事件也越来越少。这一点从中国在线视频行业的发展就很容易看出。中国的互联网生态系统在很快成熟，很多用户非常愿意为优秀的产品和内容付费。除了传统的付费订阅或购买外，掌握内容的媒体和其他互联网产品一样能利用网络带来的新机会和商业模式，如广告和增值服务等。</p>
 
-<p>威胁报社、杂志社、出版商的，不是互联网，而是他们自己。出版行业需要接受和拥抱互联网带来的新渠道和消费方式，要能在线下传播也能在线上传播，能在线下经营品牌也能在线上经验品牌。互联网把整个世界的一切节奏都加快了。在飞快变化的环境中适者生存，会有一些出版物消失，但是杀死他们的不是互联网，而是能更好适应互联网的其他同行。到头来媒体就是媒体，不再会有新旧之分。这就像现在说的传统互联网和移动互联网一样，其实只是在某个发展阶段里人为的区分而已，最根本的东西是变化很小的。</p>]]></content>
+<p>威胁报社、杂志社、出版商的，不是互联网，而是他们自己。出版行业需要接受和拥抱互联网带来的新渠道和消费方式，要能在线下传播也能在线上传播，能在线下经营品牌也能在线上经验品牌。互联网把整个世界的一切节奏都加快了。在飞快变化的环境中适者生存，会有一些出版物消失，但是杀死他们的不是互联网，而是能更好适应互联网的其他同行。到头来媒体就是媒体，不再会有新旧之分。这就像现在说的传统互联网和移动互联网一样，其实只是在某个发展阶段里人为的区分而已，最根本的东西是变化很小的。</p>
+]]></content>
   </entry>
   
   <entry>
@@ -58,10 +85,14 @@
     <updated>2013-01-03T23:59:00+08:00</updated>
     <id>http://hjiang.github.com/2013/01/03/new-year</id>
     <content type="html"><![CDATA[<p>最近看到大家都在写总结2012，展望2013的文字。我也俗一点，写点随便想到的东西吧。</p>
-<!--more-->
-<p>2012是团队加入 AVOS 的第一年，大部分时间花在了开发第一个产品上，但最终它不是一个成功的产品。这其中有几个教训。一是这个产品不是从一个我们自己捕捉到的需求从零做起、从小做大，而是从一个很复杂的 code base 开始，带了很多不必要的历史负担，一开始的决策上有失误；二是在后来的过程中没有足够早地发现原来的产品定位和方向有问题、需要转型，而是总觉得它做得不够好而沿着一个既定方向不断地去「改进」它，使得团队投入了很多努力但最终没有转化为商业价值。我们在第四季度开发新产品新<a href='http://meiweisq.com'>美味书签</a>和<a href='http://readwise.net'>美味爱读</a>时特别地去注意了避免这些问题。</p>
 
-<p>新的一年希望团队的发展能比较顺利，产品的发展能让大家有成就感。对于个人，我希望能花更多时间扩展知识面。我是个技术出身的人，不管怎么忙，都不会想放下技术上的提高，但同时也得尝试很多其他方面的东西。好在互联网上文章、讲座、书籍触手可及，现在想查什么学什么都非常容易，比起几十年前乃至十几年前实在是幸福太多了。就是希望 GFW 的迭代速度能慢一点，不要真把中国的网络搞成局域网了。探索更快更好的翻墙之法也是今年的目标之一。</p>]]></content>
+<!--more-->
+
+
+<p>2012是团队加入 AVOS 的第一年，大部分时间花在了开发第一个产品上，但最终它不是一个成功的产品。这其中有几个教训。一是这个产品不是从一个我们自己捕捉到的需求从零做起、从小做大，而是从一个很复杂的 code base 开始，带了很多不必要的历史负担，一开始的决策上有失误；二是在后来的过程中没有足够早地发现原来的产品定位和方向有问题、需要转型，而是总觉得它做得不够好而沿着一个既定方向不断地去「改进」它，使得团队投入了很多努力但最终没有转化为商业价值。我们在第四季度开发新产品新<a href="http://meiweisq.com">美味书签</a>和<a href="http://readwise.net">美味爱读</a>时特别地去注意了避免这些问题。</p>
+
+<p>新的一年希望团队的发展能比较顺利，产品的发展能让大家有成就感。对于个人，我希望能花更多时间扩展知识面。我是个技术出身的人，不管怎么忙，都不会想放下技术上的提高，但同时也得尝试很多其他方面的东西。好在互联网上文章、讲座、书籍触手可及，现在想查什么学什么都非常容易，比起几十年前乃至十几年前实在是幸福太多了。就是希望 GFW 的迭代速度能慢一点，不要真把中国的网络搞成局域网了。探索更快更好的翻墙之法也是今年的目标之一。</p>
+]]></content>
   </entry>
   
   <entry>
@@ -69,21 +100,23 @@
     <link href="http://hjiang.github.com/2012/12/31/clojure-intro/"/>
     <updated>2012-12-31T15:15:00+08:00</updated>
     <id>http://hjiang.github.com/2012/12/31/clojure-intro</id>
-    <content type="html"><![CDATA[<blockquote>
-<p>这篇文章原文叫「现实世界的 LISP - Clojure 语言初探」，发表于《程序员》杂志2012年的十二月刊。得到编辑的许可在一个月后贴出来。有网友说这篇文章写得太平淡规矩，没有那种让大家都去学 Clojure 的煽动性，不过那其实也不是我的目的。只希望对想初步了解这门语言的人有一些帮助。</p>
-</blockquote>
+    <content type="html"><![CDATA[<blockquote><p>这篇文章原文叫「现实世界的 LISP - Clojure 语言初探」，发表于《程序员》杂志2012年的十二月刊。得到编辑的许可在一个月后贴出来。有网友说这篇文章写得太平淡规矩，没有那种让大家都去学 Clojure 的煽动性，不过那其实也不是我的目的。只希望对想初步了解这门语言的人有一些帮助。</p></blockquote>
+
 <!--more-->
+
+
 <p>我在学生时代最喜欢两门程序设计语言：Scheme 和 Haskell。Scheme 是人工智能课用来做作业和项目的语言，而 Haskell 是学习函数式程序设计时所用的语言。Scheme 的简洁灵活和 Haskell 的纯函数世界都给我留下了深刻印象，所以一直希望能用这样的语言做一些实际的事情。开始了解 Clojure 之后很欣喜地发现它结合了 LISP 和函数式语言的优点，同时又拥有 JVM 成熟的生态圈，是一门虽然年轻但立即可以在实际项目中应用的语言。不像其它一些新语言，由于库的缺乏，需要早期使用者自己动手实现很多细节功能。</p>
 
 <p>Clojure 诞生于 2007 年，设计者是 Rich Hickey。由于它兼具LISP语言的高效、可扩展特性，同时又能利用Java的生态圈，在短时间内得到了相对广泛的传播，并在一些互联网公司得到应用。比如 Twitter 用来做实时数据处理的系统 Storm 就是用 Clojure 实现的。一些民间发起的开源项目，如Incanter等也在短时间内走向成熟并得到广泛应用。本文对这门语言做一个概括性的介绍，希望能让读者了解Clojure的特性，对它产生兴趣，并在合适的场景下使用这门高效的语言。</p>
 
-<h2 id='clojure'>开始使用Clojure</h2>
+<h2>开始使用Clojure</h2>
 
 <p>最快开始使用Clojure的方法是安装Leiningen (http://leiningen.org/)。Leiningen是Clojure的项目管理工具，它的作用类似于Java的Maven。在Linux和Mac系统下只需要下载一个叫lein的shell脚本。在Windows系统有对应的lein.bat批处理脚本。</p>
 
 <p>安装lein后运行</p>
 
-<pre><code>lein repl</code></pre>
+<pre><code>lein repl
+</code></pre>
 
 <p>第一次运行时，Leiningen会下载Clojure及它所依赖的.jar库文件，之后就能看到类似的提示：</p>
 
@@ -93,71 +126,82 @@ Clojure 1.4.0
     Exit: Control+D or (exit) or (quit)
 Commands: (user/help)
     Docs: (doc function-name-here)
-          (find-doc &quot;part-of-name-here&quot;)
+          (find-doc "part-of-name-here")
   Source: (source function-name-here)
           (user/sourcery function-name-here)
  Javadoc: (javadoc java-object-or-class-here)
 Examples from clojuredocs.org: [clojuredocs or cdoc]
           (user/clojuredocs name-here)
-          (user/clojuredocs &quot;ns-here&quot; &quot;name-here&quot;)
-user=&gt;</code></pre>
+          (user/clojuredocs "ns-here" "name-here")
+user=&gt;
+</code></pre>
 
 <p>输入Clojure表达式，回车后立刻就能看到结果：</p>
 
 <pre><code>user=&gt; (+ 1 2)
-3</code></pre>
+3
+</code></pre>
 
-<h2 id='lisp'>LISP</h2>
+<h2>LISP</h2>
 
 <p>首先，Clojure是LISP家族的一门语言，这意味着在语法上，Clojure和其他的LISP语言是非常相似的。比如这个Clojure 表达式</p>
 
-<pre><code>(+ 1 2)</code></pre>
+<pre><code>(+ 1 2)
+</code></pre>
 
 <p>在其他主流编程语言里一般被写为</p>
 
-<pre><code>1 + 2</code></pre>
+<pre><code>1 + 2
+</code></pre>
 
 <p>如果对它求值，那么结果是<code>3</code>。LISP最著名的特性是它的代码形式和数据表示形式是一致的，有一个专门的词<code>homoiconic</code>来描述这种特性。比如上面的<code>(+ 1 2)</code>如果看做数据，它就是一个普通的列表。在求值时，Clojure的运行环境会把列表的第一个元素作为操作或函数，而把后面的元素作为参数解释。如果在运行时不希望把一个列表作为表达式对待，可以在前面加<code>’</code>，例如<code>’(+ 1 2)</code>。这就意味着Clojure的程序可以像操作数据一样修改和生成其他 Clojure 程序。这样改变程序结构的程序在 Clojure 和其它 LISP 语言里叫做宏。宏系统使得 LISP 家族的语言具有高度可扩展性。使用者可以用宏来定义更高层的领域特定语言（domain-specific language），使得用来描述和解决问题的语言更加接近问题本身的领域。</p>
 
 <p>与其他LISP语言相比，Clojure提供了更为丰富的原生数据结构。比如 vector：</p>
 
 <pre><code>[1 2 3]
-[a b c]</code></pre>
+[a b c]
+</code></pre>
 
 <p>这里的<code>a</code>、<code>b</code>、<code>c</code>是Clojure的符号（symbol）。每个符号代表运行环境里的某个对象，与其他语言里的标识符（identifier）概念类似。</p>
 
 <p>map：</p>
 
-<pre><code>{:a 1 :b 2}</code></pre>
+<pre><code>{:a 1 :b 2}
+</code></pre>
 
 <p>这里的<code>:a</code>和<code>:b</code>是键，而<code>1</code>和<code>2</code>是它们对应的值。<code>:a</code>和<code>:b</code>这样以<code>:</code>开头的表达式被称为关键字（keyword）。它们和符号有些类似，但只代表它们自己而不代表任何其他对象。在Ruby语言里也有类似概念（叫做symbol，注意不要和Clojure的symbol混淆）。关键字通常被用作 map 的键，但也可以用其他类型做键。上面的map也可以写作<code>{:a 1, :b 2}</code>。逗号“<code>,</code>”在Clojure里没有实际意义，一般只在为了提高可读性时使用。</p>
 
 <p>set：</p>
 
-<pre><code>#{1 2 3}</code></pre>
+<pre><code>#{1 2 3}
+</code></pre>
 
 <p>当然，数据结构是可以嵌套的。值得一提的是，与C++和Java等一些有比较严格的类型系统的语言不同，Clojure并不要求一个 vector、map 或 set 里的元素是同一类型的，也就是说下面的数据都是合法的：</p>
 
 <pre><code>[1 2 “abc” [:a 1]]
-{:a 1, “b” 2, “abc” #{1 :a :b}}</code></pre>
+{:a 1, “b” 2, “abc” #{1 :a :b}}
+</code></pre>
 
 <p>与其他语言类似，不同的数据结构有不同的性能保证和特性。</p>
 
 <p>Clojure为这些数据结构提供了丰富和一致的操作。比如取元素：</p>
 
 <pre><code>([1 2 3] 0) ; =&gt; 1
-({:a 1 :b 2 :c 3} :b) ; =&gt; 2</code></pre>
+({:a 1 :b 2 :c 3} :b) ; =&gt; 2
+</code></pre>
 
 <p>分号<code>;</code>是Clojure的行注释符，后面的内容会被忽略，这里我用注释来说明对每一行求值的结果。很容易注意到，从容器中取元素在语法上和函数调用是一致的，所以也可以把一个容器看做一个函数，它能接受一个参数，返回所对应的值。 第二行也可以写做</p>
 
-<pre><code>(:b {:a 1 :b 2 :c 3})</code></pre>
+<pre><code>(:b {:a 1 :b 2 :c 3})
+</code></pre>
 
 <p>这是在用keyword做map的key时为了方便而做的特殊处理，不适用于其他情况。</p>
 
 <p>添加元素：</p>
 
 <pre><code>(conj [1 2 3] 4) ; =&gt; [1 2 3 4]
-(conj ‘(1 2 3) 4) ; =&gt; (4 1 2 3)</code></pre>
+(conj ‘(1 2 3) 4) ; =&gt; (4 1 2 3)
+</code></pre>
 
 <p>可以注意到用<code>conj</code>向数组和列表添加元素时，得到的结果是不一样的。这是因为<code>conj</code>会以最适合具体数据类型的方式操作，对数组来说向末尾添加元素最高效，而对列表来说向头部添加元素最高效。使用这样的通用函数可以让我们定义其它高效的通用函数。</p>
 
@@ -165,26 +209,31 @@ user=&gt;</code></pre>
 
 <p>前面说到符号可以代表运行环境中的对象。Clojure里可以通过下面的语句把一个符号绑定到特定对象上：</p>
 
-<pre><code>(def my-string “Hello World!”)</code></pre>
+<pre><code>(def my-string “Hello World!”)
+</code></pre>
 
 <p>和其他数据一样，函数也可以绑定到一个符号上：</p>
 
 <pre><code>(def say-hello
   (fn [name]
-    (println (str “Hello ” name))))</code></pre>
+    (println (str “Hello ” name))))
+</code></pre>
 
 <p>这里<code>(fn [name] ...)</code>定义了一个函数，这个函数有一个名为<code>name</code> 的参数。这个函数被绑定到<code>say-hello</code>这个名称上。如果运行</p>
 
-<pre><code>(say-hello “James”)</code></pre>
+<pre><code>(say-hello “James”)
+</code></pre>
 
 <p>会输出</p>
 
-<pre><code>Hello James</code></pre>
+<pre><code>Hello James
+</code></pre>
 
 <p>由于函数的核心地位，和其他LISP语言一样，Clojure中有一个定义函数的简便方法：</p>
 
 <pre><code>(defn say-hello [name]
-  (println (str “Hello” name)))</code></pre>
+  (println (str “Hello” name)))
+</code></pre>
 
 <p>这和上面的定义是等效的。</p>
 
@@ -192,11 +241,12 @@ user=&gt;</code></pre>
 
 <pre><code>(let [a 1
       b 2]
-  (+ a b))</code></pre>
+  (+ a b))
+</code></pre>
 
 <p>这里在且仅在<code>(let ...)</code>的范围内<code>a</code>为<code>1</code>，<code>b</code>为<code>2</code>。</p>
 
-<h2 id='id4'>函数式程序设计</h2>
+<h2>函数式程序设计</h2>
 
 <p>函数式程序设计是一种把计算机程序看做数学上的函数计算的程序设计范型。对于一个函数来说，它的结果应该由它的参数完全决定。函数除了返回运算结果外也不应有其它行为。也就是说，函数式程序设计排斥副作用（side effects）和可变的状态，如可变的全局或静态变量、交互的输入输出、对参数的改变等。</p>
 
@@ -206,36 +256,41 @@ user=&gt;</code></pre>
 
 <p>提供不可变的核心数据结构使得Clojure与传统LISP比更加偏向于函数式语言，因为函数的参数在逻辑上完全可以被作为值（而不是引用）对待，不会被函数改变，而函数的结果在逻辑上也是一个新的值。Clojure并不像Haskell一样对IO做限制。函数体中的IO不会反应到函数的类型上。</p>
 
-<h2 id='id5'>高效的不可变数据结构</h2>
+<h2>高效的不可变数据结构</h2>
 
 <p>前面说过 Clojure 的核心数据结构是不可变的，它通过提供不可变的数据结构来鼓励函数式编程。很多习惯于用传统过程式语言或面向对象语言的朋友不是很理解这一点。举个简单的例子来说明，当你往一个数组的末尾加入一个元素的时候：</p>
 
-<p>* 在逻辑上，一个包含这个新元素和所有旧元素的新数组被创建； * 原来的数组（不包含这个新元素）仍然可以被访问； * 这个操作在时间复杂度上的保证和对应的可变数据结构是一致的（对于在数组末尾增加元素来说，平均复杂度应该接近于<code>O(1)</code>）。</p>
+<ul>
+<li>在逻辑上，一个包含这个新元素和所有旧元素的新数组被创建；</li>
+<li>原来的数组（不包含这个新元素）仍然可以被访问；</li>
+<li>这个操作在时间复杂度上的保证和对应的可变数据结构是一致的（对于在数组末尾增加元素来说，平均复杂度应该接近于<code>O(1)</code>）。</li>
+</ul>
+
 
 <p>要同时满足以上三个条件，很显然 Clojure 不可能用类似于C/C++的方法实现数组。事实上，Clojure提供的大部分数据结构都是用树结构实现的。在原有对象基础上构造新对象时，只需要复制必须改变的节点。数据可以被作为不可变的值对待，而同时各种操作又能相对比较高效地实现。</p>
 
-<h2 id='id6'>动态语言</h2>
+<h2>动态语言</h2>
 
 <p>LISP 语言可以说是动态语言的先驱。Clojure 自然也是一个动态语言。所谓动态，体现在很多方面。首先 Clojure 使用动态类型系统，每个 symbol 所指代的值的类型是在运行时确定的。对一个函数来说，它只关心参数能接受某些操作，并不对具体类型做限制。比如这个函数：<code>(fn [a b] (+ a b))</code>，它只要求<code>a</code>和<code>b</code>必须能作为<code>+</code>的参数，而并不对其类型做限制。这样的动态类型系统称为 duck typing，来源于 James Whitcomb Riley 的一句话：</p>
 
-<blockquote>
-<p>当我看到一只像鸭子一样游泳、像鸭子一样叫的鸟时，我就认为它是一只鸭子。</p>
-</blockquote>
+<blockquote><p>当我看到一只像鸭子一样游泳、像鸭子一样叫的鸟时，我就认为它是一只鸭子。</p></blockquote>
 
 <p>动态也体现在symbol的绑定上。假设有一个函数<code>some-op</code>是这样的：</p>
 
 <pre><code>(defn some-op []
   ; ...
-  (send-email))</code></pre>
+  (send-email))
+</code></pre>
 
 <p>其中<code>send-email</code>是一个用来发送邮件的函数。它的单元测试中可能有下面的代码：</p>
 
 <pre><code>(binding [send-email (fn [])]
-  (some-op))</code></pre>
+  (some-op))
+</code></pre>
 
 <p>很显然，我们不能每运行一次测试都真地发送邮件，所以用<code>binding</code>把<code>send-email</code>动态绑定到一个空函数上来避免实际的效果。在测试中，动态绑定还可以用来验证特定函数的参数和结果。这样的特性使得Clojure的程序对测试非常友好，对开发大型系统很有帮助。</p>
 
-<h2 id='id7'>与平台的结合</h2>
+<h2>与平台的结合</h2>
 
 <p>目前Clojure存在多个平台的实现，包括JVM、CLR、和JavaScript。为了充分利用各宿主平台的优势，Clojure的不同实现除了基本语法一致之外，并不是特别注意可移植性。与其它追求平台独立性的语言不同，Clojure更强调和宿主平台的无缝互操作，所以在Clojure里可以非常容易地使用第三方Java、 CLR、或JavaScript库。这个特点使得 Clojure 可以充分地利用宿主平台的成熟生态圈，让它在发布不久后就显示出强大的生命力。</p>
 
@@ -244,17 +299,19 @@ user=&gt;</code></pre>
 <pre><code>(.toUpperCase “foo”)  ; 调用对象方法
 (System/staticMethod)  ; 调用静态方法或访问静态属性
 (new MyClass arg1 arg2)  ; 创建对象 #1
-(MyClass. arg1 arg2)  ; 创建对象 #2</code></pre>
+(MyClass. arg1 arg2)  ; 创建对象 #2
+</code></pre>
 
 <p>简单的几行就完全展示了从Clojure调用Java代码的几种情况：对象方法、类（静态）方法/属性、以及创建对象的两种方式。</p>
 
-<h2 id='id8'>一个简单实例</h2>
+<h2>一个简单实例</h2>
 
 <p>对任何语言的介绍或教程来说，没有一个 Hello World 的例子似乎就不太完整。各种语言的 Hello World 程序其实对读者了解语言在实践中的特点并没有太大帮助。这里我们给出一个用Clojure做Web开发的简单例子，希望能让读者熟悉用Clojure做现实中的开发所需的知识。</p>
 
 <p>在开始一个新项目前，可以用 Leiningen 生成一个基本的项目框架：</p>
 
-<pre><code>lein new hello</code></pre>
+<pre><code>lein new hello
+</code></pre>
 
 <p>进入 <code>hello</code> 目录后可以看到如下的目录结构：</p>
 
@@ -268,34 +325,38 @@ user=&gt;</code></pre>
 │       └── core.clj
 └── test
     └── hello
-        └── core_test.clj</code></pre>
+        └── core_test.clj
+</code></pre>
 
 <p><code>project.clj</code> 是Leiningen的项目定义文件，里面主要包含项目所依赖的库及插件的版本信息：</p>
 
-<pre><code>(defproject hello &quot;0.1.0-SNAPSHOT&quot;
-  :description &quot;FIXME: write description&quot;
-  :url &quot;http://example.com/FIXME&quot;
-  :license {:name &quot;Eclipse Public License&quot;
-            :url &quot;http://www.eclipse.org/legal/epl-v10.html&quot;}
-  :dependencies [[org.clojure/clojure &quot;1.4.0&quot;]])</code></pre>
+<pre><code>(defproject hello "0.1.0-SNAPSHOT"
+  :description "FIXME: write description"
+  :url "http://example.com/FIXME"
+  :license {:name "Eclipse Public License"
+            :url "http://www.eclipse.org/legal/epl-v10.html"}
+  :dependencies [[org.clojure/clojure "1.4.0"]])
+</code></pre>
 
 <p><code>src</code> 目录是源码目录，<code>test</code> 目录是测试目录。源码目录中只有一个文件<code>src/hello/core.clj</code>：</p>
 
 <pre><code>(ns hello.core)
 
 (defn foo
-  &quot;I don&#39;t do a whole lot.&quot;
+  "I don't do a whole lot."
   [x]
-  (println x &quot;Hello, World!&quot;))</code></pre>
+  (println x "Hello, World!"))
+</code></pre>
 
-<p>第一行 <code>(ns hello.core)</code> 声明了这个文件是模块 <code>hello.core</code>。注意，和 Java、Python等语言类似，Clojure的模块名称和文件名是存在对应关系的。<code>(defn foo </code> 后面有一个字符串<code>&quot;I don&#39;t do a whole lot.”</code>，这是一个可选的doc string（文档字符串），对<code>foo</code>起说明作用。</p>
+<p>第一行 <code>(ns hello.core)</code> 声明了这个文件是模块 <code>hello.core</code>。注意，和 Java、Python等语言类似，Clojure的模块名称和文件名是存在对应关系的。<code>(defn foo</code> 后面有一个字符串<code>"I don't do a whole lot.”</code>，这是一个可选的doc string（文档字符串），对<code>foo</code>起说明作用。</p>
 
 <p>接下来，我们把 Noir 加到项目的依赖列表里。Noir 是一个用来开发 Web 应用的轻量框架。</p>
 
-<pre><code>(defproject hello &quot;0.1.0-SNAPSHOT&quot;
+<pre><code>(defproject hello "0.1.0-SNAPSHOT"
    ...
-  :dependencies [[org.clojure/clojure &quot;1.4.0&quot;]
-                 [noir &quot;1.3.0-beta10&quot;]])</code></pre>
+  :dependencies [[org.clojure/clojure "1.4.0"]
+                 [noir "1.3.0-beta10"]])
+</code></pre>
 
 <p>然后把 <code>src/hello/core.clj</code> 的内容改为：</p>
 
@@ -306,21 +367,24 @@ user=&gt;</code></pre>
 (defpage “/:name” {name :name}
   (str “Hello “ name “!”))
 
-(defn -main [] (server/start 9999))</code></pre>
+(defn -main [] (server/start 9999))
+</code></pre>
 
 <p>开头 <code>(ns ...)</code> 里的 <code>(:use)</code> 和 <code>(:require)</code> 把我们用到的库引入到当前模块。<code>defpage</code> 是 Noir 定义网页的方法，它非常像一个函数：输入是用户的请求和参数，返回的是页面的内容。短短的几行代码已经完成了一个简单的web app。用 Leiningen 运行它：</p>
 
-<pre><code>lein run -m hello.core</code></pre>
+<pre><code>lein run -m hello.core
+</code></pre>
 
 <p>如果你用浏览器访问 <code>http://localhost:9999/World</code>，应该可以看到<code>Hello World!</code>。</p>
 
-<h2 id='id9'>结语</h2>
+<h2>结语</h2>
 
 <p>一篇文章是难以覆盖一门语言的方方面面的。由于篇幅所限，本文没有介绍 Clojure 的两个重要特色：一是丰富的并行运算机制，二是作为LISP语言最重要的特色之一－宏。本文的目的在于介绍Clojure的基本语法、环境和工具，有兴趣的读者可以在互联网上找到大量进一步学习的资料。</p>
 
 <p>有人说 Clojure 是为并行而设计的，并认为多线程编程会因为使用 Clojure 而变得非常简单。然而这门语言最吸引我的还是LISP语言的简洁、强大和可扩展性，以及Clojure对函数式程序设计的鼓励。一门程序设计语言可以通过提供更高层及更丰富的抽象来帮助用户更方便地描述问题和过程。然而这些抽象是基于人本身对问题和过程的理解的，不能超越人的认知。例如 Clojure 提供了 STM （software transactional memory，软件事务内存）来管理多个线程对共享资源的访问，与其他语言中常见的基于锁的方案比有很多优点。但如果一个程序员没有对 STM 的机制有深入的了解就在 Clojure 程序中随意使用 STM，是很容易造成问题的。比如有副作用的代码被多次重复执行，或者程序陷入『活锁』等等。STM 会带来便利，但没有降低对使用者在对问题的理解方面的要求。</p>
 
-<p>Fred Brooks 有一篇著名的论文叫『No Silver Bullet - Essence and Accidents of Software Engineering』。大意说没有任何单个技术进步会使得软件开发的效率大幅度提高。真正困难的问题并不是由于语言造成的，所以也不会因为某个语言提供了新的抽象而简单很多。语言是一个工具，用户应该对它有合理的期望。好的工程师可以用任何语言实现高质量的软件，而一个不好的工程师也不会因为使用一门特定的语言而在产出上有很大提高。Clojure 不是 Silver Bullet，但它能在一定范围内提高程序设计的效率。你仍然需要自己分析和寻找问题的答案，但它可以让你在实现解决方案的时候更高效。学习和熟悉 Clojure 采用的各项技术及倡导的编程风格，可以使用户成为更好的软件工程师，同样的技术和方法也可以应用到其他语言的实践中去。</p>]]></content>
+<p>Fred Brooks 有一篇著名的论文叫『No Silver Bullet - Essence and Accidents of Software Engineering』。大意说没有任何单个技术进步会使得软件开发的效率大幅度提高。真正困难的问题并不是由于语言造成的，所以也不会因为某个语言提供了新的抽象而简单很多。语言是一个工具，用户应该对它有合理的期望。好的工程师可以用任何语言实现高质量的软件，而一个不好的工程师也不会因为使用一门特定的语言而在产出上有很大提高。Clojure 不是 Silver Bullet，但它能在一定范围内提高程序设计的效率。你仍然需要自己分析和寻找问题的答案，但它可以让你在实现解决方案的时候更高效。学习和熟悉 Clojure 采用的各项技术及倡导的编程风格，可以使用户成为更好的软件工程师，同样的技术和方法也可以应用到其他语言的实践中去。</p>
+]]></content>
   </entry>
   
   <entry>
@@ -329,16 +393,19 @@ user=&gt;</code></pre>
     <updated>2012-12-17T01:08:00+08:00</updated>
     <id>http://hjiang.github.com/2012/12/17/common-cv-errors</id>
     <content type="html"><![CDATA[<p>从工作之后、到后来创业、再到现在主管 AVOS 的北京 Office，我看了不计其数的简历，也参与了不少面试。看到很多求职者都犯了很多相似的错误，于是总结出来，希望能对一些求职的人有一些正面的作用。</p>
+
 <!--more-->
-<h3 id='id1'>细节</h3>
+
+
+<h3>细节</h3>
 
 <p>不少简历里都有一些细节上的错误，比如错别字等。求职对于一个人来说是很重要的事，应该谨慎对待。而简历是敲门砖，虽然简单，但应该尽量做到无可挑剔。试问如果一个人对一件简单而对自己很重要的事情都马马虎虎，在工作上怎么让人放心呢？</p>
 
 <p>我看到的最难以接受的错误是把自己日常工作的东西都写错，例如一个有两年 iOS 开发经验的人在简历的所有地方都把 Objective-C 写成了 Object C。一个连自己使用的语言都搞不清的人，怎么能说掌握了这门语言。</p>
 
-<p>对求职信，也有很多值得注意的地方。有一些求职信是空白的，就只有一个附件，连申请什么职位也没写，给人的感觉就是此人懒到了极点，连求职都这样，可见其他事情也会很马虎。还有些求职信的信头 <code>From: </code> 里用的不是真名。我最近见到过的有诸如『aha61』、『94smart』、『不想长大』（不想长大？你确定想工作吗？）之类的，显得很不专业。当然，如果是阿里系的朋友，使用花名是可以理解的。</p>
+<p>对求职信，也有很多值得注意的地方。有一些求职信是空白的，就只有一个附件，连申请什么职位也没写，给人的感觉就是此人懒到了极点，连求职都这样，可见其他事情也会很马虎。还有些求职信的信头 <code>From:</code> 里用的不是真名。我最近见到过的有诸如『aha61』、『94smart』、『不想长大』（不想长大？你确定想工作吗？）之类的，显得很不专业。当然，如果是阿里系的朋友，使用花名是可以理解的。</p>
 
-<h3 id='id2'>『精通』</h3>
+<h3>『精通』</h3>
 
 <p>请慎用『精通』二字。如果你在简历里说精通某个东西，那么最好有很大把握比面试官更熟悉这方面。我面试过的人里几乎所有精通 C++ 的人最终都被证实只是略懂 C++。在 Google 时还听说一个学生因为会写 Elisp 来定制 Emacs，于是简历里写精通 LISP。然后 HR 就安排了一个 LISP 的高手面试他，然后就没有然后了。</p>
 
@@ -346,11 +413,12 @@ user=&gt;</code></pre>
 
 <p>慎用、慎用。</p>
 
-<h3 id='id3'>面试</h3>
+<h3>面试</h3>
 
 <p>在面试中能不能正确回答出某个难题并不是特别重要，最重要的是展示出自己面对难题时的思路以及积极的态度。面试里通常会出现一些比较难而且多半不会在实际工作中出现的问题。面试官期待的是看到面试者能积极甚至是很兴奋的尝试以不同的思路分析和解决问题，比如把问题的规模变小、先考虑简单的特殊情况、或者从几个实例中去发现规律等。面试官也希望看到在给出一些提示后，面试者能被引导到正确的思路上。</p>
 
-<p>所以遇到不能很快解决的难题可以大胆地说出想法，在一段时间没有进展之后可以向面试官要求提示，但是不要简单地说『我不知道』。没有任何公司会喜欢在困难面前轻易放弃的员工。</p>]]></content>
+<p>所以遇到不能很快解决的难题可以大胆地说出想法，在一段时间没有进展之后可以向面试官要求提示，但是不要简单地说『我不知道』。没有任何公司会喜欢在困难面前轻易放弃的员工。</p>
+]]></content>
   </entry>
   
   <entry>
@@ -358,7 +426,10 @@ user=&gt;</code></pre>
     <link href="http://hjiang.github.com/2011/07/12/elegant-mongodb-mapreduce-with-clojure/"/>
     <updated>2011-07-12T00:00:00+08:00</updated>
     <id>http://hjiang.github.com/2011/07/12/elegant-mongodb-mapreduce-with-clojure</id>
-    <content type="html"><![CDATA[<p>I wrote a post about <a href='http://onycloud.com/2011/07/13/mapreduce-with-mongodb-and-clojure.html' title='MapReduce with MongoDB and Clojure'>MapReduce with MongoDB and Clojure</a> on the <a href='http://onycloud.com'>OnyCloud Blog</a>.</p>]]></content>
+    <content type="html"><![CDATA[<p>I wrote a post about <a href="http://onycloud.com/2011/07/13/mapreduce-with-mongodb-and-clojure.html" title="MapReduce with MongoDB and Clojure">MapReduce with MongoDB and
+Clojure</a>
+on the <a href="http://onycloud.com">OnyCloud Blog</a>.</p>
+]]></content>
   </entry>
   
   <entry>
@@ -366,7 +437,9 @@ user=&gt;</code></pre>
     <link href="http://hjiang.github.com/2011/06/02/rxvt-zenburn-theme/"/>
     <updated>2011-06-02T00:00:00+08:00</updated>
     <id>http://hjiang.github.com/2011/06/02/rxvt-zenburn-theme</id>
-    <content type="html"><![CDATA[<p>On Debian or Ubuntu derived systems, install rxvt with unicode and 256-color support. sudo apt-get install rxvt-unicode-256color Put the following in <code>$HOME/.Xdefaults</code></p>
+    <content type="html"><![CDATA[<p>On Debian or Ubuntu derived systems, install rxvt with unicode and
+256-color support. sudo apt-get install rxvt-unicode-256color Put the
+following in <code>$HOME/.Xdefaults</code></p>
 
 <pre><code>URxvt*termName: rxvt-256color
 URxvt*xftAntialias: true
@@ -390,7 +463,9 @@ URxvt*color11: #f0dfaf
 URxvt*color12: #8cd0d3
 URxvt*color13: #dc8cc3
 URxvt*color14: #93e0e3
-URxvt*color15: #ffffff</code></pre>]]></content>
+URxvt*color15: #ffffff
+</code></pre>
+]]></content>
   </entry>
   
 </feed>
