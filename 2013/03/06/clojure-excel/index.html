@@ -5,14 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Elegant MongoDB MapReduce with Clojure - A Humble Programmer</title>
+  <title>用 Clojure 处理 Excel 数据 - A Humble Programmer</title>
   <meta name="author" content="Hong Jiang">
 
   
-  <meta name="description" content="I wrote a post about MapReduce with MongoDB and
-Clojure
-on the OnyCloud Blog.
-">
+  <meta name="description" content="最近遇到一个小问题。我们每个月会用一个 Excel 表格记录当月的员工工资。假设有30个员工，那么一年下来就会有12个表格，每个表格有30行。由于中国规定年薪超过12万的人都要申报缴税情况，我们需要提供给每个员工他全年在公司的收入明细。也就是说我们需要生成30个表格，每个表格有12行。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -21,7 +18,7 @@ on the OnyCloud Blog.
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://hjiang.github.com/2011/07/12/elegant-mongodb-mapreduce-with-clojure/">
+  <link rel="canonical" href="http://hjiang.github.com/2013/03/06/clojure-excel/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -83,7 +80,7 @@ on the OnyCloud Blog.
   
   <header>
     
-      <h1 class="entry-title">Elegant MongoDB MapReduce With Clojure</h1>
+      <h1 class="entry-title">用 Clojure 处理 Excel 数据</h1>
     
     
       <p class="meta">
@@ -99,16 +96,59 @@ on the OnyCloud Blog.
   
 
 
-<time datetime="2011-07-12T00:00:00+08:00" pubdate data-updated="true">Jul 12<span>th</span>, 2011</time>
+<time datetime="2013-03-06T01:25:00+08:00" pubdate data-updated="true">Mar 6<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>I wrote a post about <a href="http://onycloud.com/2011/07/13/mapreduce-with-mongodb-and-clojure.html" title="MapReduce with MongoDB and Clojure">MapReduce with MongoDB and
-Clojure</a>
-on the <a href="http://onycloud.com">OnyCloud Blog</a>.</p>
+<div class="entry-content"><p>最近遇到一个小问题。我们每个月会用一个 Excel 表格记录当月的员工工资。假设有30个员工，那么一年下来就会有12个表格，每个表格有30行。由于中国规定年薪超过12万的人都要申报缴税情况，我们需要提供给每个员工他全年在公司的收入明细。也就是说我们需要生成30个表格，每个表格有12行。组织数据的维度变了。这个转化可以请负责 HR 的同事手工完成，但是一来耗时太久，二来这也是不符合我司风格的。这里介绍一个简单办法，也留着给自己备忘。</p>
+
+<!-- more -->
+
+
+<p>以前曾经用 Ruby 处理过 Excel 表格，很方便，但是这次用 Clojure 代码更精简了很多。</p>
+
+<p>唯一用到的第三方库是 Incanter</p>
+
+<pre><code>(ns salaries.core
+  (:use clojure.tools.trace
+        [clojure.java.io :only [file]]
+        [incanter.excel :only [read-xls save-xls]]
+        [incanter.core :only [to-dataset]]))
+</code></pre>
+
+<p>主函数读取当前目录下的所有 Excel 文件，并用 <code>reduce</code> 逐一处理每个文件，得到一个从姓名到薪酬明细的 <code>map</code>, 然后把每个人的薪酬数据保存到 Excel 文件里：</p>
+
+<pre><code>(defn -main []
+  (let [xlsx-files (map (memfn getName)
+                        (filter (fn [f] (.endsWith (.getName f) ".xlsx"))
+                                (file-seq (file "."))))]
+    (doseq [[name rows] (reduce proc-file {} xlsx-files)]
+      (save-xls (to-dataset rows) (str name "_generated.xlsx")))))
+</code></pre>
+
+<p><code>proc-file</code> 是处理每个文件的函数，它再用一次 <code>reduce</code> 处理每一行：</p>
+
+<pre><code>(defn proc-file [people file]
+  (let [data (read-xls file)
+        rows (take-while #(string? (get % "姓名")) (drop 1 (:rows data)))]
+    (reduce proc-row people rows)))
+</code></pre>
+
+<p>其中的 <code>(drop 1 (:rows data))</code> 是为了去掉表头。</p>
+
+<p>对每一行的处理就很简单了：</p>
+
+<pre><code>(defn proc-row [people row]
+  (let [name (get row "姓名")
+        person (or (get people name) [])
+        data (select-keys row ["姓名","税","本月实发",
+                               "应税金额","工资","小计","当月增/减",
+                               "病事假","税后扣款"])]
+    (assoc people name (conj person data))))
+</code></pre>
 </div>
 
 
@@ -131,7 +171,7 @@ on the <a href="http://onycloud.com">OnyCloud Blog</a>.</p>
   
 
 
-<time datetime="2011-07-12T00:00:00+08:00" pubdate data-updated="true">Jul 12<span>th</span>, 2011</time>
+<time datetime="2013-03-06T01:25:00+08:00" pubdate data-updated="true">Mar 6<span>th</span>, 2013</time>
       
 
 
@@ -139,7 +179,7 @@ on the <a href="http://onycloud.com">OnyCloud Blog</a>.</p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://hjiang.github.com/2011/07/12/elegant-mongodb-mapreduce-with-clojure/" data-via="jiangh" data-counturl="http://hjiang.github.com/2011/07/12/elegant-mongodb-mapreduce-with-clojure/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://hjiang.github.com/2013/03/06/clojure-excel/" data-via="jiangh" data-counturl="http://hjiang.github.com/2013/03/06/clojure-excel/" >Tweet</a>
   
   
   
@@ -149,14 +189,18 @@ on the <a href="http://onycloud.com">OnyCloud Blog</a>.</p>
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/2011/06/02/rxvt-zenburn-theme/" title="Previous Post: Rxvt zenburn theme">&laquo; Rxvt zenburn theme</a>
+        <a class="basic-alignment left" href="/2013/02/22/filedrop-release/" title="Previous Post: 发送文件到手机或给别人：最简单的方法">&laquo; 发送文件到手机或给别人：最简单的方法</a>
       
-      
-        <a class="basic-alignment right" href="/2012/12/17/common-cv-errors/" title="Next Post: 求职时的常见错误">求职时的常见错误 &raquo;</a>
       
     </p>
   </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -232,7 +276,10 @@ on the <a href="http://onycloud.com">OnyCloud Blog</a>.</p>
       var disqus_shortname = 'hjiang';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://hjiang.github.com/2013/03/06/clojure-excel/';
+        var disqus_url = 'http://hjiang.github.com/2013/03/06/clojure-excel/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

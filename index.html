@@ -9,7 +9,7 @@
   <meta name="author" content="Hong Jiang">
 
   
-  <meta name="description" content="春节收假前做了个小产品 FileDrop，目标是提供一个最简单的发文件到手机和发文件给别人的方法。它的用法非常简单，打开 http://filedrop.in，把要发送的文件拖到页面上。只要从手机上用任何可以扫描二维码的应用（比如微信）扫描页面上显示的二维码就可以把文件下载到手机上。 &hellip;">
+  <meta name="description" content="最近遇到一个小问题。我们每个月会用一个 Excel 表格记录当月的员工工资。假设有30个员工，那么一年下来就会有12个表格，每个表格有30行。由于中国规定年薪超过12万的人都要申报缴税情况，我们需要提供给每个员工他全年在公司的收入明细。也就是说我们需要生成30个表格，每个表格有12行。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +77,47 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2013/03/06/clojure-excel/">用 Clojure 处理 Excel 数据</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-06T01:25:00+08:00" pubdate data-updated="true">Mar 6<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>最近遇到一个小问题。我们每个月会用一个 Excel 表格记录当月的员工工资。假设有30个员工，那么一年下来就会有12个表格，每个表格有30行。由于中国规定年薪超过12万的人都要申报缴税情况，我们需要提供给每个员工他全年在公司的收入明细。也就是说我们需要生成30个表格，每个表格有12行。组织数据的维度变了。这个转化可以请负责 HR 的同事手工完成，但是一来耗时太久，二来这也是不符合我司风格的。这里介绍一个简单办法，也留着给自己备忘。</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/2013/03/06/clojure-excel/">阅读全文 &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -444,6 +485,10 @@ URxvt*color15: #ffffff
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/2013/03/06/clojure-excel/">用 Clojure 处理 Excel 数据</a>
+      </li>
+    
+      <li class="post">
         <a href="/2013/02/22/filedrop-release/">发送文件到手机或给别人：最简单的方法</a>
       </li>
     
@@ -457,10 +502,6 @@ URxvt*color15: #ffffff
     
       <li class="post">
         <a href="/2013/01/03/new-year/">新的一年</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2012/12/31/clojure-intro/">Clojure: 现实世界的 LISP</a>
       </li>
     
   </ul>
